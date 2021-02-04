@@ -28,9 +28,13 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.css"
+              "src/styles.css",
+              "node_modules/bootstrap/dist/css/bootstrap.css",
+              "node_modules/font-awesome/css/font-awesome.min.css"
             ],
-            "scripts": []
+            "scripts": [
+              "node_modules/bootstrap/dist/js/bootstrap.min.js"
+            ]
           },
           "configurations": {
             "production": {
@@ -124,5 +128,8 @@
       }
     }
   },
-  "defaultProject": "Balogen"
+  "defaultProject": "Balogen",
+  "cli": {
+    "analytics": "4e6ad864-2ae1-4089-91a1-9c1d12db4efc"
+  }
 }

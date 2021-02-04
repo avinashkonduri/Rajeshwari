@@ -1,0 +1,7 @@
+<p>testing works!</p>
+<div *ngFor="let item of foodItems">
+  {{item}}
+</div>
+<div *ngFor="let item of animals" [ngStyle]="{'background':item.name == 'dog'? 'red':'green'}">
+  {{item.name}}
+</div>

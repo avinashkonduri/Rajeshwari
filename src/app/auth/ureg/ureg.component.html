@@ -1,0 +1,20 @@
+<div class="container">
+  <form class="py-3" [formGroup]="regForm" (ngSubmit)="onSubmit()">
+    <label>
+      UserName
+      <input type="text" class="form-group" formControlName="userName">
+    </label>
+    <br/>
+    <label>
+      Email
+      <input type="text" class="form-group" formControlName="email">
+    </label>
+    <br/>
+    <label>
+      Password
+      <input type="password" class="form-group" formControlName="password">
+    </label>
+    <br/>
+    <button class="btn btn-primary" type="submit" [disabled]="!regForm.valid">Submit</button>
+  </form>
+</div>
