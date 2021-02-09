@@ -21,5 +21,8 @@ export class TestingComponent implements OnInit {
 
   ngOnInit(): void {
   }
-
+  getText(_evt: any){
+    console.log(_evt);
+    console.log(_evt.target.value);
+  }
 }
