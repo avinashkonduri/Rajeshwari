@@ -1,12 +1,15 @@
 import { Injectable } from '@angular/core';
-import { User } from '../model/user';
-
+import { ApiUser, User } from '../model/user';
+import { HttpClient } from '@angular/common/http';
+import { map, catchError, tap } from 'rxjs/operators';
+import { throwError as observableThrowError, Observable } from 'rxjs';
+const API_URL = 'https://gorest.co.in/public-api/';
 @Injectable({
   providedIn: 'root'
 })
 export class UserService {
 
-  constructor() { }
+  constructor(private http: HttpClient) { }
 
   addUser(user: User) {
     let users = [];
@@ -25,5 +28,14 @@ export class UserService {
       UserArray = JSON.parse(localStorage.getItem('Users') || '{}');
     }
     return UserArray.find((p: { userName: any; password: any; }) => p.userName === user.userName && p.password === user.password);
+  }
+
+  addApiUser(apiUser: ApiUser): Observable<any>{
+    return this.http.post<any>(API_URL + 'users',apiUser).pipe(tap(resp => {
+    }));
+  }
+
+  getApiUserList(): Observable<any> {
+    return this.http.get<ApiUser>(API_URL + 'users');
   }
 }

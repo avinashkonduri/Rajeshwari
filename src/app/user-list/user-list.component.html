@@ -1,0 +1,19 @@
+<button class="btn btn-primary ml-5" (click)="add()">Add User</button>
+<table border="1">
+    <thead>
+        <tr>
+          <th>Name</th>
+          <th>Email</th>
+          <th>Gender</th>
+          <th>Status</th>
+        </tr>
+    </thead>
+    <tbody *ngFor="let users of apiUserList">
+          <tr>
+            <td>{{users.name}}</td>
+            <td>{{users.email}}</td>
+            <td>{{users.gender}}</td>
+            <td>{{users.status}}</td>
+          </tr>
+    </tbody>
+</table>
